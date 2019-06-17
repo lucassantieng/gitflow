@@ -1,0 +1,84 @@
+#############################
+TRABALHANDO REPOSITÓRIO LOCAL
+#############################
+
+->init ou start a local
+
+
+o que é gitgnore ? São as restrições que serão ignoradas na hora de subir o projeto, é bom entender como funciona
+como fazer ignorar arquivos?
+ex: NÃO QUERO PNG
+clica no png e ignora
+ou
+vai no arquivo .gitgnore e insira:
+*.PNG
+*.log
+QUANDO EU INSIRO ALGO NO GITGNORE ELE NAO SERA VISTO COMO ALTERAÇÕES
+
+
+tradução:
+-unstaged files ->
+-staged files ->escolho o q eu quero dar commit
+-commit message ->
+
+WIP-> Work in Progress: Alterações não commitadas
+
+Quando eu faço uma alteração ou inclusão de algum arquivo ele mostra na hora as alterações.
+
+
+
+Fluxo:
+1- alterar arquivo
+2- dar staged
+3- commitar
+4- realizar push
+
+O que eu consigo fazer? Controlar o fluxo de versionamento do projeto
+Consigo visualizar alterações, inserir alterações, remover alterações, ignorar arquivos especificados, desfazer alterações
+
+
+
+COMO DESFAZER ALTERAÇÕES REALIZADAS?
+Para fazer teste fazer seguir o passo a passo e depois chegar a uma conclusão.
+
+PRIMEIRO TIPO: alterar um arquivo 
+
+
+
+######################
+TRABALHANDO COM BRANCH
+######################
+
+O que é uma branch?
+É um ramo criado a partir de um ponto alterando fluxos de uma versão.
+Resumindo o Cenário: Tenho um fluxo master do meu projeto e quando necessito criar um fluxo sem alterar a master irei criar uma branch e realizar alterações nessa branch sem afetar a master e depois irei unifica-las.
+
+
+CRIANDO UMA FEATURE:
+-criar: podemos criar uma através de um commit ou da própria Master
+create branch: essa branch será criada local // SÓ LOCAL, NADA DE REMOTE
+-após criar a branch, ela fica somente local, para enviar no remote, é necessário dar um git push
+-deletar:
+-renomear:
+
+
+COMITANDO CÓDIGO EM UMA NOVA BRANCH
+Cenário: tenho uma branch master e uma branch feature, vamos escrever(alterar) códigos na feature local e depois criar a branch remotamente
+para fazer isso, basta dar um git push
+
+
+ALTERAÇÃO EM PRODUÇÃO:
+Cenário: Preciso corrigir algo  na minha branch master, porém, estou em uma branch de feature.
+-basta clicar duas vezes na master e realizar a alteração e fazer o push, nao irá´afetar nada na minha feature.
+-apos o rebase, a MASTER irá estar a mais atualizada(contendo as alterações da feature)
+
+JUNTANDO AS BRANCH
+Cenário: Realizar alteração na minha feature e  na minha master, alterações distintas,agora, preciso junta-las com ambas alterações
+-rebase: pegar branch master(que sofreu alteração) e jogar em cima da feature
+existem duas maneiras de juntar branch's: Rebase e Margen
+diferença: Rebase nao gera um novo commit, apenas unifica
+resumo: joga a feature na master(unifica as duas) com o botão direito
+
+-margem:
+entra na branch master e joga a feature-master na branch master e realiza o merge.
+-ao fazer isso, minhas alterações estão presentes na master, porém, será necessário fazer o commit (Gerando um novo commit para confirmar as alterações)
